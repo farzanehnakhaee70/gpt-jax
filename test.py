@@ -1,6 +1,8 @@
 import time
 import numpy as np
 import jax
+from model import GPT, GPTConfig, convert_hf_params
+from flax.traverse_util import flatten_dict
 
 def test_nanogpt():
     key = jax.random.PRNGKey(0)
