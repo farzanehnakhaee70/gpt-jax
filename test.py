@@ -1,5 +1,6 @@
 import time
 import numpy as np
+import jax
 
 def test_nanogpt():
     key = jax.random.PRNGKey(0)
