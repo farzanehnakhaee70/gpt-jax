@@ -4,6 +4,15 @@ import jax
 from model import GPT, GPTConfig, convert_hf_params
 from flax.traverse_util import flatten_dict
 
+config = GPTConfig(
+    vocab_size=256,
+    block_size=32,
+    num_embeds=64,
+    num_layers=1,
+    num_heads=2,
+    dropout_rate=0.1,
+)
+
 def test_nanogpt():
     key = jax.random.PRNGKey(0)
     key, key_idxs, key_params = jax.random.split(key, 3)
